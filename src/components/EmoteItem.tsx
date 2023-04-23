@@ -4,7 +4,7 @@ import { EmoteInfo, EmoteStats } from "../model";
 
 const greenHighlight = keyframes({
     "0%": {
-        backgroundColor: "rgba(0 200 0 / 0.15)",
+        backgroundColor: "rgba(200 200 200 / 0.15)",
     },
     "100%": {
         backgroundColor: "rgba(0 0 0 / 0)",
