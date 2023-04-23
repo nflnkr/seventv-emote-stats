@@ -89,7 +89,6 @@ export default function EmoteList({ channel }: Props) {
 
     return (
         <Container>
-            <Text size="$lg">{channel}</Text>
             <FlexWrap>
                 <Input
                     value={emoteNameFilter}
