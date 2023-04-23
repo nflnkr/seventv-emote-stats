@@ -1,6 +1,19 @@
-import { Image, Link, styled, Text } from "@nextui-org/react";
+import { Image, keyframes, Link, styled, Text } from "@nextui-org/react";
 import { EmoteInfo, EmoteStats } from "../model";
 
+
+const greenHighlight = keyframes({
+    "0%": {
+        backgroundColor: "rgba(0 200 0 / 0.15)",
+    },
+    "100%": {
+        backgroundColor: "rgba(0 0 0 / 0)",
+    },
+});
+
+const animationStyle = {
+    animation: `${greenHighlight} 1.5s`,
+};
 
 export const Row = styled("div", {
     display: "flex",
@@ -45,10 +58,10 @@ export default function EmoteItem({ emote }: Props) {
                     href={`https://7tv.app/emotes/${emote.id}`}
                 >{emote.name}</Link>
             </Cell>
-            <Cell css={{ flex: "0.7 0.7 0" }}>
+            <Cell key={`${emote.total}-total`} css={{ flex: "0.7 0.7 0", ...animationStyle }}>
                 <Text>{emote.total}</Text>
             </Cell>
-            <Cell css={{ flex: "0.7 0.7 0" }}>
+            <Cell key={`${emote.messages}-messages`} css={{ flex: "0.7 0.7 0", ...animationStyle }}>
                 <Text>{emote.messages}</Text>
             </Cell>
         </Row>
