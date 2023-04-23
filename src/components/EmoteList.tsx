@@ -103,6 +103,7 @@ export default function EmoteList({ channel }: Props) {
                 <Radio.Group
                     label="На странице"
                     defaultValue="15"
+                    value={emotesPerPageValue}
                     orientation="horizontal"
                     onChange={handleEmotesPerPageChange}
                     css={{
