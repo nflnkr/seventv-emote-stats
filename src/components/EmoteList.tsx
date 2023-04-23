@@ -60,16 +60,16 @@ export default function EmoteList({ channel }: Props) {
     const [emotesPerPageValue, setEmotesPerPageValue] = useState<string>("15");
     const debouncedEmoteNameFilter = useDebounce(emoteNameFilter, 200);
 
-    useLayoutEffect(function resetPageOnChannelChange() {
+    useLayoutEffect(function resetPage() {
         setCurrentPage(0);
-    }, [channel]);
+    }, [channel, debouncedEmoteNameFilter]);
 
     const filteredEmotes = useMemo(() => {
         if (!channelStats) return;
 
         const emotes = Object.values(channelStats.emotes);
         const sortedEmotes = sortMode ? emotes.sort(sortModes[sortMode]) : emotes;
-        const filteredEmotes = sortedEmotes.filter(emote => emote.name.includes(debouncedEmoteNameFilter));
+        const filteredEmotes = sortedEmotes.filter(emote => emote.name.toLowerCase().includes(debouncedEmoteNameFilter.toLowerCase()));
 
         return filteredEmotes;
     }, [sortMode, channelStats, debouncedEmoteNameFilter]);
