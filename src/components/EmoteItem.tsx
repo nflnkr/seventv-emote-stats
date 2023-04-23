@@ -11,10 +11,6 @@ const greenHighlight = keyframes({
     },
 });
 
-const animationStyle = {
-    animation: `${greenHighlight} 1.5s`,
-};
-
 export const Row = styled("div", {
     display: "flex",
     width: "100%",
@@ -40,7 +36,6 @@ interface Props {
 }
 
 export default function EmoteItem({ emote }: Props) {
-    if (emote.total < emote.messages) console.warn("Wrong emote stat for emote", emote);
 
     return (
         <Row>
@@ -49,6 +44,7 @@ export default function EmoteItem({ emote }: Props) {
                     src={emote.url}
                     height={32}
                     showSkeleton={false}
+                    referrerPolicy="no-referrer"
                 />
             </Cell>
             <Cell>
@@ -58,10 +54,10 @@ export default function EmoteItem({ emote }: Props) {
                     href={`https://7tv.app/emotes/${emote.id}`}
                 >{emote.name}</Link>
             </Cell>
-            <Cell key={`${emote.total}-total`} css={{ flex: "0.7 0.7 0", ...animationStyle }}>
+            <Cell key={`${emote.total}-total`} css={{ flex: "0.7 0.7 0", animation: `${greenHighlight} 1.5s` }}>
                 <Text>{emote.total}</Text>
             </Cell>
-            <Cell key={`${emote.messages}-messages`} css={{ flex: "0.7 0.7 0", ...animationStyle }}>
+            <Cell key={`${emote.messages}-messages`} css={{ flex: "0.7 0.7 0", animation: `${greenHighlight} 1.5s` }}>
                 <Text>{emote.messages}</Text>
             </Cell>
         </Row>
