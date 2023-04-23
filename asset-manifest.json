@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/seventv-emote-stats/static/css/main.e6c13ad2.css",
-    "main.js": "/seventv-emote-stats/static/js/main.5345457a.js",
+    "main.js": "/seventv-emote-stats/static/js/main.dacd1697.js",
     "index.html": "/seventv-emote-stats/index.html",
     "main.e6c13ad2.css.map": "/seventv-emote-stats/static/css/main.e6c13ad2.css.map",
-    "main.5345457a.js.map": "/seventv-emote-stats/static/js/main.5345457a.js.map"
+    "main.dacd1697.js.map": "/seventv-emote-stats/static/js/main.dacd1697.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5345457a.js"
+    "static/js/main.dacd1697.js"
   ]
 }
