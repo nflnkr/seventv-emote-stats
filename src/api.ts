@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 
 
 // const apiUrl = "http://localhost:3312";
-const apiUrl = "http://194.87.110.212";
+const apiUrl = "https://www.dowelust.com";
 
 const fetcher = (url: string) => fetch(url).then(r => r.json());
 
